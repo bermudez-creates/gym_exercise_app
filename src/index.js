@@ -18,3 +18,5 @@ root.render(
 //this index file stays simple
 //using js&html code in same code
 //like a 3in1 combo with MUI youre able to stylize
+//inside utils is where fetch calls are made
+//process.env property returns an object containing the user environment
