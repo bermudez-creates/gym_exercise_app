@@ -26,18 +26,18 @@ const SearchExercises = ({ setBodyPart, bodyPart, setExercises }) => {
         exerciseOptions
       );
 
-      const searchedExercises = exercisesData.filter(
-        (exercise) =>
-          exercise.name.toLocaleLowerCase().includes(search) ||
-          exercise.target.toLocaleLowerCase().includes(search) ||
-          exercise.equipment.toLocaleLowerCase().includes(search) ||
-          exercise.bodyPart.toLocaleLowerCase().includes(search)
-      );
+      const searchedExercises = exercisesData.filter((exercise) => {
+        exercise.name.toLowerCase().includes(search) ||
+          exercise.target.toLowerCase().includes(search) ||
+          exercise.equipment.toLowerCase().includes(search) ||
+          exercise.bodyPart.toLowerCase().includes(search);
+      });
+      //filter returning emtpy array
 
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
 
       setSearch('');
-      setExercises(searchedExercises);
+      setExercises(exercisesData);
     }
   };
 
@@ -63,7 +63,7 @@ const SearchExercises = ({ setBodyPart, bodyPart, setExercises }) => {
           height="76px"
           value={search}
           onChange={(e) => {
-            setSearch(e.target.value.toLocaleLowerCase());
+            setSearch(e.target.value.toLowerCase());
           }}
           placeholder="Search for your next workout"
           type="text"
