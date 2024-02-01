@@ -34,6 +34,8 @@ const SearchExercises = ({ setBodyPart, bodyPart, setExercises }) => {
           exercise.bodyPart.toLocaleLowerCase().includes(search)
       );
 
+      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+
       setSearch('');
       setExercises(searchedExercises);
     }
@@ -85,6 +87,7 @@ const SearchExercises = ({ setBodyPart, bodyPart, setExercises }) => {
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
         <HorizontalScrollbar
           data={bodyParts}
+          bodyParts
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
         />
